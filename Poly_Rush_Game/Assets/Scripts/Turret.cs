@@ -1,16 +1,28 @@
+using System.Collections;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public GameObject targetObject;
+    public float toggleInterval = 1.0f;
+
+    private void Start()
     {
-        
+        StartCoroutine(ToggleCoroutine());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator ToggleCoroutine()
     {
-        
+        if (targetObject == null)
+        {
+            Debug.LogError("No se ha asignado un objeto en el script ToggleObject.");
+            yield break;
+        }
+
+        while (true)
+        {
+            targetObject.SetActive(!targetObject.activeSelf);
+            yield return new WaitForSeconds(toggleInterval);
+        }
     }
 }
