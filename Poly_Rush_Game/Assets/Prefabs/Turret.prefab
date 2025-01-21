@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 1065284496511588743}
   m_Layer: 0
   m_Name: KillTrigger
-  m_TagString: Untagged
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

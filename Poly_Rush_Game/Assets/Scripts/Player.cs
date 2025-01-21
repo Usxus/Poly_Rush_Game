@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     private bool canMove = true;
 
     [SerializeField] private RagDoll ragDoll;
+    [SerializeField] private FinishManager finishManager;
 
     private void Update()
     {
@@ -65,12 +66,11 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*
-        if (other.CompareTag("Car"))
+        if (other.CompareTag("Fire"))
         {
-            canMove = false;
-            ragDoll.SetEnabled(true);
+            DisablePlayer();    
+            finishManager.FinishGame();
+            finishManager.Defeated();
         }
-        */
     }
 }

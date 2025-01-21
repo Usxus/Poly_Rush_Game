@@ -9361,6 +9361,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1647593410}
     m_Modifications:
     - target: {fileID: 1468834951124028415, guid: bb5178e34dd488542b08f8d5f1c0ee06, type: 3}
+      propertyPath: finishManager
+      value: 
+      objectReference: {fileID: 1622198547}
+    - target: {fileID: 1468834951124028415, guid: bb5178e34dd488542b08f8d5f1c0ee06, type: 3}
       propertyPath: mouseSensitivity
       value: 200
       objectReference: {fileID: 0}
