@@ -15,7 +15,7 @@ public class Turret : MonoBehaviour
     {
         if (targetObject == null)
         {
-            Debug.LogError("No se ha asignado un objeto en el script ToggleObject.");
+            Debug.LogError("No hay targetobject");
             yield break;
         }
 

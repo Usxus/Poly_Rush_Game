@@ -31,6 +31,7 @@ public class FinishManager : MonoBehaviour
 
     public void Defeated()
     {
+        
         winGO.SetActive(false);
         loseGO.SetActive(true);
     }
