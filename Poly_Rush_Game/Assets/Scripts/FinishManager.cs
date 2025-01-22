@@ -16,9 +16,10 @@ public class FinishManager : MonoBehaviour
     public void FinishGame()
     {
         finishMenu.SetActive(true);
-        Time.timeScale = 0f;
         isPaused = true;
         scoreTMP.text = stopwatch.ExportTime();
+        stopwatch.ToggleState();
+        stopwatch.stopwatchText.text = "";
     }
     
     public void Win()
