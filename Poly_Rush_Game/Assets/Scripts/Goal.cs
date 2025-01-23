@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Goal : MonoBehaviour
@@ -7,9 +6,10 @@ public class Goal : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //Si el jugador toca la meta...
         if (other.CompareTag("Player"))
         {
-            Debug.Log(other.name);
+            //Finalizar el juego y mandar UI de victoria
             finishManager.FinishGame();
             finishManager.Win();
         }

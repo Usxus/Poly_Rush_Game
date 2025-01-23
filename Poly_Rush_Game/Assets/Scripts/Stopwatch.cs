@@ -4,13 +4,15 @@ using UnityEngine;
 public class Stopwatch : MonoBehaviour
 {
     public TextMeshProUGUI stopwatchText;
-    private float elapsedTime = 0f;
+    private float elapsedTime;
     private bool isRunning = true;
 
     private void Update()
     {
+        //Solo si está corriendo
         if (isRunning)
         {
+            //Incrementar el tiempo transcurrido y mostrar por pantalla
             elapsedTime += Time.deltaTime;
             UpdateStopwatchText();
         }
@@ -18,28 +20,27 @@ public class Stopwatch : MonoBehaviour
 
     private void UpdateStopwatchText()
     {
+        //Convertir los valores de decimal a enteros
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(elapsedTime % 60f);
-
-        stopwatchText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        
+        //Mostrar el texto
+        stopwatchText.text = $"{minutes:00}:{seconds:00}";
     }
 
     public void ToggleState()
     {
+        //Activa o detiene el stopwatch
         isRunning = !isRunning;
-    }
-
-    public void ResetStopwatch()
-    {
-        elapsedTime = 0f;
-        UpdateStopwatchText();
     }
     
     public string ExportTime()
     {
+        //Convertir los valores de decimal a enteros
         int minutes = Mathf.FloorToInt(elapsedTime / 60f);
         int seconds = Mathf.FloorToInt(elapsedTime % 60f);
 
-        return string.Format("{0:00}:{1:00}", minutes, seconds);
+        //Exportar valor en formato string
+        return $"{minutes:00}:{seconds:00}";
     }
 }

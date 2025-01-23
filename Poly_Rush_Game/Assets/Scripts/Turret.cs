@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
-
 public class Turret : MonoBehaviour
 {
-    public GameObject targetObject;
-    public float toggleInterval = 1.0f;
+    //Variables privadas pero asignables desde el inspector
+    [SerializeField] private GameObject fire;
+    [SerializeField] private float toggleInterval = 1.0f;
 
     private void Start()
     {
@@ -13,15 +13,10 @@ public class Turret : MonoBehaviour
 
     private IEnumerator ToggleCoroutine()
     {
-        if (targetObject == null)
+        while (true) //Permanentemente activado
         {
-            Debug.LogError("No hay targetobject");
-            yield break;
-        }
-
-        while (true)
-        {
-            targetObject.SetActive(!targetObject.activeSelf);
+            //Encender y apagar el fuego después del periodo asignado
+            fire.SetActive(!fire.activeSelf);
             yield return new WaitForSeconds(toggleInterval);
         }
     }
