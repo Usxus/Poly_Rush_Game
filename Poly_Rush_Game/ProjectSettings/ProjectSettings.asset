@@ -164,7 +164,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.unity.trashdash
-    Standalone: 
+    Standalone: com.DefaultCompany.Poly-Rush-Game
     Tizen: 
     iPhone: 
     tvOS: 
