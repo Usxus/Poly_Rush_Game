@@ -4504,6 +4504,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727874678}
     m_Modifications:
+    - target: {fileID: 897462931793253462, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 2053922671505551340, guid: f195136c585152d4aa13012e5970f20b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4563,6 +4568,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10121,6 +10131,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727874678}
     m_Modifications:
+    - target: {fileID: 897462931793253462, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 2053922671505551340, guid: f195136c585152d4aa13012e5970f20b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10185,6 +10200,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13158,6 +13178,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727874678}
     m_Modifications:
+    - target: {fileID: 897462931793253462, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 2053922671505551340, guid: f195136c585152d4aa13012e5970f20b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13222,6 +13247,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20275,6 +20305,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20742,6 +20777,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727874678}
     m_Modifications:
+    - target: {fileID: 897462931793253462, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 2053922671505551340, guid: f195136c585152d4aa13012e5970f20b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20801,6 +20841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21721,6 +21766,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1727874678}
     m_Modifications:
+    - target: {fileID: 897462931793253462, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Fire
+      objectReference: {fileID: 0}
     - target: {fileID: 2053922671505551340, guid: f195136c585152d4aa13012e5970f20b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21785,6 +21835,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8002842546512524512, guid: f195136c585152d4aa13012e5970f20b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
