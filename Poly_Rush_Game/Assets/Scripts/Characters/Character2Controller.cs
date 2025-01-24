@@ -12,6 +12,10 @@ public class Character2Controller : MonoBehaviour
     public float x, y;                       // Valores de entrada
     private bool enSuelo = true;             // Verifica si el personaje está en el suelo
     private bool saltoEnCurso = false;       // Verifica si el salto ya está en curso
+    private bool canMove = true;             // Controla si el jugador puede moverse
+
+    [SerializeField] private RagDoll ragDoll; // Componente Ragdoll
+    [SerializeField] private FinishManager finishManager;
 
     // Propiedad pública para verificar si el personaje está en el suelo
     public bool Grounded
@@ -25,9 +29,69 @@ public class Character2Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (canMove)
+        {
+            Movement();
+        }
+
+        // Salto solo si estamos en el suelo y no hay otro salto en curso
+        if (Input.GetButtonDown("Jump") && enSuelo && !saltoEnCurso)
+        {
+            Saltar();
+        }
+    }
+
+    public void DisablePlayer()
+    {
+        canMove = false;
+        ragDoll.SetEnabled(true); // Habilitar el Ragdoll
+        anim.enabled = false;    // Desactivar animaciones
+    }
+
+    public void EnablePlayer()
+    {
+        canMove = true;
+        ragDoll.SetEnabled(false); // Deshabilitar el Ragdoll
+        anim.enabled = true;      // Habilitar animaciones
+    }
+
+    private void Saltar()
+    {
+        rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
+        enSuelo = false; // El personaje ya no está en el suelo
+        saltoEnCurso = true; // Marca que el salto está en curso
+        anim.SetTrigger("Saltar"); // Activa la animación de salto
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            enSuelo = true;
+            saltoEnCurso = false; // Permite hacer un salto nuevamente
+        }
+
+        // Si colisiona con un enemigo, activa el Ragdoll
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            DisablePlayer();
+            Debug.Log("Jugador muerto. Ragdoll activado.");
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            enSuelo = true;
+        }
+    }
+
+    private void Movement()
+    {
+        // Capturar la entrada del usuario
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
@@ -40,46 +104,16 @@ public class Character2Controller : MonoBehaviour
         // Actualizar animaciones
         anim.SetFloat("VelX", x);
         anim.SetFloat("VelY", y);
-
-        // Salto solo si estamos en el suelo y no hay otro salto en curso
-        if (Input.GetButtonDown("Jump") && enSuelo && !saltoEnCurso)
-        {
-            Saltar();
-            saltoEnCurso = true; // Marca que el salto está en curso
-        }
-
-        // Detener la animación de salto cuando el personaje toca el suelo
-        if (enSuelo && saltoEnCurso)
-        {
-            anim.SetTrigger("Saltar"); // Detiene la animación de salto cuando el personaje está en el suelo
-        }
     }
 
-    private void Saltar()
+    private void OnTriggerEnter(Collider other)
     {
-        rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
-        enSuelo = false; // El personaje ya no está en el suelo
-        anim.SetTrigger("Saltar"); // Activa la animación de salto
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        // Si el personaje toca el suelo, reseteamos el salto
-        if (collision.gameObject.CompareTag("Ground"))
+        if (other.CompareTag("Fire") && canMove)
         {
-            enSuelo = true;
-            saltoEnCurso = false; // Permite hacer un salto nuevamente
-            anim.SetTrigger("Saltar"); // Detiene la animación de salto
-            Debug.Log("En el suelo");
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        // Verifica que seguimos tocando el suelo
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            enSuelo = true;
+            //Si tocas el fuego te mueres
+            DisablePlayer();
+            finishManager.FinishGame();
+            finishManager.Defeated();
         }
     }
 }
