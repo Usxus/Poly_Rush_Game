@@ -17787,51 +17787,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Confetti
       objectReference: {fileID: 0}
-    - target: {fileID: 1946089071564763312, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: bacc7ee8fd0869d45be470f049e53d8b, type: 2}
-    - target: {fileID: 3798115082195812055, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5061473904250261544, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d114cde0600508c4f9eed72b935654e6, type: 2}
-    - target: {fileID: 5889491848488371329, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6908909915599233506, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: bacc7ee8fd0869d45be470f049e53d8b, type: 2}
-    - target: {fileID: 7273358300492104943, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8132130597258177855, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8583932072834191057, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: d114cde0600508c4f9eed72b935654e6, type: 2}
-    - target: {fileID: 8623575962360131122, guid: d5ab4ab18e1a66d40b83f1479f2a01a1,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
