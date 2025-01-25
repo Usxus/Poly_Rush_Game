@@ -16,12 +16,7 @@ public class Character2Controller : MonoBehaviour
 
     [SerializeField] private RagDoll ragDoll; // Componente Ragdoll
     [SerializeField] private FinishManager finishManager;
-
-    // Propiedad pública para verificar si el personaje está en el suelo
-    public bool Grounded
-    {
-        get { return enSuelo; }
-    }
+    
 
     void Start()
     {
@@ -53,24 +48,28 @@ public class Character2Controller : MonoBehaviour
 
     private void Saltar()
     {
+        Debug.Log("SSalto");
         rb.AddForce(Vector3.up * fuerzaSalto, ForceMode.Impulse);
         enSuelo = false; // El personaje ya no está en el suelo
         saltoEnCurso = true; // Marca que el salto está en curso
+        anim.SetBool("EnSuelo", false);
         anim.SetTrigger("Saltar"); // Activa la animación de salto
     }
 
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && saltoEnCurso)
         {
-            enSuelo = true;
+            Debug.Log("Aterrizaje");
             saltoEnCurso = false; // Permite hacer un salto nuevamente
+            anim.SetBool("EnSuelo", true);
         }
 
         // Verificar si el objeto tiene el tag "Fire"
         if (collision.gameObject.CompareTag("Fire") && !canMove)
         {
+            
             // Habilitar el ragdoll
             ragDoll.SetEnabled(true);
             anim.enabled = false; // Desactivar animaciones
@@ -81,6 +80,7 @@ public class Character2Controller : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            Debug.Log("Tocando suelo");
             enSuelo = true;
         }
     }
