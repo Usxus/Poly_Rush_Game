@@ -26,6 +26,15 @@ public class Character2Controller : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            DisablePlayer();
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            EnablePlayer();
+        }
+        
         if (canMove)
         {
             Movement();
@@ -43,6 +52,13 @@ public class Character2Controller : MonoBehaviour
         canMove = false;
         ragDoll.SetEnabled(true); // Habilitar el Ragdoll
         anim.enabled = false;    // Desactivar animaciones
+    }
+
+    public void EnablePlayer()
+    {
+        canMove = true;
+        ragDoll.SetEnabled(false); // Habilitar el Ragdoll
+        anim.enabled = true; 
     }
 
 

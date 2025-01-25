@@ -15,7 +15,7 @@ public class FinishManager : MonoBehaviour
     {
         //Finalizar el juego (independientemente de si ganas o pierdes)
         finishMenu.SetActive(true); //Activar UI
-        isPaused = true;            //Pausar juego
+        //isPaused = true;            //Pausar juego
         scoreTMP.text = stopwatch.ExportTime();     //Mostrar el tiempo de partida
         stopwatch.ToggleState();                    //Detener el reloj
         stopwatch.stopwatchText.text = "";          //Borrar el texto del stopwatch para que solo se vean el finishmenu
