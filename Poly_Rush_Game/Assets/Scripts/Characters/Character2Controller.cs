@@ -50,12 +50,6 @@ public class Character2Controller : MonoBehaviour
         anim.enabled = false;    // Desactivar animaciones
     }
 
-    public void EnablePlayer()
-    {
-        canMove = true;
-        ragDoll.SetEnabled(false); // Deshabilitar el Ragdoll
-        anim.enabled = true;      // Habilitar animaciones
-    }
 
     private void Saltar()
     {
@@ -65,6 +59,7 @@ public class Character2Controller : MonoBehaviour
         anim.SetTrigger("Saltar"); // Activa la animación de salto
     }
 
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -73,11 +68,12 @@ public class Character2Controller : MonoBehaviour
             saltoEnCurso = false; // Permite hacer un salto nuevamente
         }
 
-        // Si colisiona con un enemigo, activa el Ragdoll
-        if (collision.gameObject.CompareTag("Enemy"))
+        // Verificar si el objeto tiene el tag "Fire"
+        if (collision.gameObject.CompareTag("Fire") && !canMove)
         {
-            DisablePlayer();
-            Debug.Log("Jugador muerto. Ragdoll activado.");
+            // Habilitar el ragdoll
+            ragDoll.SetEnabled(true);
+            anim.enabled = false; // Desactivar animaciones
         }
     }
 
